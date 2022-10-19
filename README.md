@@ -1,6 +1,6 @@
 # Typescript Backend Syntax GUIDE
 
-This repo is a syntax guide for Typescript in the backend
+This repo is a syntax guide for using Typescript in the backend
 
 - Usually when using Typescript we use es6 syntax for imports:
 
