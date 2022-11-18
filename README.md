@@ -23,6 +23,32 @@ tsc --init
 - `strict` : Enable all strict type-checking options.
 - `moduleResolution` : Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
 
+### Run Typescript with nodemon
+
+```bash
+nodemon app.js
+```
+
+- assign to `npm run dev` in package.json
+
+### Build Typescript to Javascript
+
+```bash
+tsc
+```
+
+- assign to `npm run build` in package.json
+
+### Run Javascript
+
+```bash
+node app.js
+```
+
+- assign to `npm start` in package.json
+
+- _TIP: Another way is to use `tsc app.js -w` to watch the changes in the file and build it automatically and then run `nodemon app.js` to see the changes immediately_
+
 ## Syntax Tips
 
 - Usually when using Typescript we use es6 syntax for imports:
@@ -30,6 +56,8 @@ tsc --init
   ```typescript
   import express from 'express'
   ```
+
+````
 
 - Express Request, Response, NextFunction:
 
@@ -88,3 +116,4 @@ import { Type } from 'mongoose'
 // Inside an Interface:
 _id: Type.ObjectId
 ```
+````
