@@ -2,6 +2,29 @@
 
 This repo is a guide for using Typescript in the backend
 
+## Configuration
+
+### Install Typescript
+
+```bash
+npm install -g typescript
+```
+
+### Create tsconfig.json
+
+```bash
+tsc --init
+```
+
+- `target` : Specify ECMAScript target version: 'es5', 'es6', 'es2016', 'es2020', or 'ESNext'.
+- `module` : Specify module code generation: 'commonjs', 'es6', 'es2020', or 'ESNext'.
+- `outDir` : Redirect output structure to the directory.
+- `rootDir` : Specify the root directory of input files. Use to control the output directory structure with --outDir.
+- `strict` : Enable all strict type-checking options.
+- `moduleResolution` : Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
+
+## Syntax Tips
+
 - Usually when using Typescript we use es6 syntax for imports:
 
   ```typescript
