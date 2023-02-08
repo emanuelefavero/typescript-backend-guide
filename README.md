@@ -7,7 +7,7 @@ This repo is a guide for using Typescript in the backend
 ### Install Typescript
 
 ```bash
-npm install -g typescript
+npm i -D typescript ts-node @types/node @types/express nodemon
 ```
 
 ### Create tsconfig.json
