@@ -12,6 +12,12 @@ npm i -D typescript ts-node @types/node @types/express nodemon concurrently
 
 > TIP: `concurrently` is used to run multiple scripts at the same time
 
+- Also, install `express` if you are going to use it:
+
+  ```bash
+  npm i express
+  ```
+
 ### Create tsconfig.json
 
 - Run to create a `tsconfig.json` file:
