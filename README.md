@@ -16,26 +16,26 @@ npm i -D typescript ts-node @types/node @types/express nodemon concurrently
 
 - Run to create a `tsconfig.json` file:
 
-```bash
-npx tsc --init
-```
+  ```bash
+  npx tsc --init
+  ```
 
 - `tsconfig.json` example:
 
-```json
-{
-  "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "target": "es6",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
-    "rootDir": "src"
-  },
-  "lib": ["es2015"]
-}
-```
+  ```json
+  {
+    "compilerOptions": {
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "target": "es6",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "dist",
+      "rootDir": "src"
+    },
+    "lib": ["es2015"]
+  }
+  ```
 
 - `target` : Specify ECMAScript target version: 'es5', 'es6', 'es2016', 'es2020', or 'ESNext'.
 - `module` : Specify module code generation: 'commonjs', 'es6', 'es2020', or 'ESNext'.
@@ -135,8 +135,8 @@ npm start
 
 - Mongoose id type (NOTE: its better to let the database add the id for you)
 
-```typescript
-import { Type } from 'mongoose'
-// Inside an Interface:
-_id: Type.ObjectId
-```
+  ```typescript
+  import { Type } from 'mongoose'
+  // Inside an Interface:
+  _id: Type.ObjectId
+  ```
