@@ -7,13 +7,34 @@ This repo is a guide for using Typescript in the backend
 ### Install Typescript
 
 ```bash
-npm i -D typescript ts-node @types/node @types/express nodemon
+npm i -D typescript ts-node @types/node @types/express nodemon concurrently
 ```
+
+> TIP: `concurrently` is used to run multiple scripts at the same time
 
 ### Create tsconfig.json
 
+- Run to create a `tsconfig.json` file:
+
 ```bash
-tsc --init
+npx tsc --init
+```
+
+- `tsconfig.json` example:
+
+```json
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "lib": ["es2015"]
+}
 ```
 
 - `target` : Specify ECMAScript target version: 'es5', 'es6', 'es2016', 'es2020', or 'ESNext'.
@@ -23,31 +44,34 @@ tsc --init
 - `strict` : Enable all strict type-checking options.
 - `moduleResolution` : Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
 
-### Run Typescript with nodemon
+### Create a `src` folder with an `index.ts` file
 
 ```bash
-nodemon app.js
+mkdir src
+touch src/index.ts
 ```
 
-- assign to `npm run dev` in package.json
+### Add scripts to `package.json`
 
-### Build Typescript to Javascript
+```json
+"scripts": {
+    "start": "tsc && node dist/index.js",
+    "build": "tsc",
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\""
+  },
+```
+
+### Run typescript in development
 
 ```bash
-tsc
+npm run dev
 ```
 
-- assign to `npm run build` in package.json
-
-### Run Javascript
+### Run typescript in production
 
 ```bash
-node app.js
+npm start
 ```
-
-- assign to `npm start` in package.json
-
-- _TIP: Another way is to use `tsc app.js -w` to watch the changes in the file and build it automatically and then run `nodemon app.js` to see the changes immediately_
 
 ## Syntax Tips
 
@@ -56,8 +80,6 @@ node app.js
   ```typescript
   import express from 'express'
   ```
-
-````
 
 - Express Request, Response, NextFunction:
 
@@ -99,6 +121,7 @@ node app.js
 
   ```typescript
   import { Schema, InferSchemaType } from 'mongoose'
+
   const UserSchema = new Schema({
     name: {
       type: string,
@@ -106,6 +129,7 @@ node app.js
     },
     avatar: String,
   })
+
   type IUser = InferSchemaType<typeof UserSchema>
   ```
 
@@ -116,4 +140,3 @@ import { Type } from 'mongoose'
 // Inside an Interface:
 _id: Type.ObjectId
 ```
-````
